@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+/* App.css - Styling for the Fan Controller Dashboard */
+
+/* Import Tailwind */
+@import 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css';
+
+/* Custom Styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.animate-spin {
+  animation: spin 3s linear infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Range input styling */
+input[type=range] {
+  height: 25px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  background: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #E5E7EB;
+  border-radius: 8px;
+  border: 0px solid #000000;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 1px #000000;
+  border: 0px solid #2563EB;
+  height: 18px;
+  width: 18px;
+  border-radius: 18px;
+  background: #3B82F6;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #E5E7EB;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #E5E7EB;
+  border-radius: 8px;
+  border: 0px solid #000000;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 1px #000000;
+  border: 0px solid #2563EB;
+  height: 18px;
+  width: 18px;
+  border-radius: 18px;
+  background: #3B82F6;
+  cursor: pointer;
+}
+
+/* Card animations */
+.bg-white {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Status colors */
+.text-red-500 {
+  color: #EF4444;
+}
+
+.text-yellow-500 {
+  color: #F59E0B;
+}
+
+.text-green-500 {
+  color: #10B981;
+}
+
+.text-blue-500 {
+  color: #3B82F6;
+}
+
+.text-gray-400 {
+  color: #9CA3AF;
+}
+
+.text-gray-500 {
+  color: #6B7280;
+}
+
+.text-gray-600 {
+  color: #4B5563;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+.text-gray-800 {
+  color: #1F2937;
+}
+
+/* Button states */
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .text-4xl {
+    font-size: 1.75rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+  
+  .h-96 {
+    height: 18rem;
   }
 }
