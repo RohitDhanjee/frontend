@@ -5,7 +5,7 @@ import { Fan, Thermometer, Sliders, Info, Clock, Calendar, Settings, RefreshCw }
 import io from 'socket.io-client';
 import './App.css';
 
-const API_URL = "http://localhost:5000"; // Change this to your server URL
+const API_URL = "https://iot-fan-speed-controller-backend.vercel.app"; // Change this to your server URL
 const socket = io(API_URL);
 
 function App() {
